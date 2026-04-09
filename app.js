@@ -34,7 +34,7 @@ const staticData = {
             ]
         },
         {
-            "name": "Etherlens",
+            "name": "Etherlens by Whiteguard",
             "url": "https://mgr1vas.github.io/whiteguard_etherlens/",
             "location": "San Francisco, US",
             "waf": "None Detected",
