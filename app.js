@@ -1,7 +1,9 @@
+// Hardcoded Data με ονόματα και domains
 const staticData = {
     "last_update": "2026-04-09 18:00:00",
     "sites": [
         {
+            "name": "Whiteguard",
             "url": "https://whiteguard.org",
             "location": "San Francisco, US",
             "waf": "CloudFlare",
@@ -16,6 +18,7 @@ const staticData = {
             ]
         },
         {
+            "name": "Research Agent",
             "url": "https://research-agent-3c46.onrender.com",
             "location": "San Francisco, US",
             "waf": "CloudFlare",
@@ -31,6 +34,7 @@ const staticData = {
             ]
         },
         {
+            "name": "Etherlens",
             "url": "https://mgr1vas.github.io/whiteguard_etherlens/",
             "location": "San Francisco, US",
             "waf": "None Detected",
@@ -59,7 +63,10 @@ function loadResults() {
         
         card.innerHTML = `
             <div class="flex justify-between items-start mb-4">
-                <h2 class="text-xl font-bold truncate w-2/3 text-white">${site.url}</h2>
+                <div class="w-2/3">
+                    <h2 class="text-2xl font-black text-white tracking-tight leading-tight">${site.name}</h2>
+                    <p class="text-[10px] text-slate-500 font-medium truncate">${site.url.replace('https://', '')}</p>
+                </div>
                 <div class="text-right">
                     <p class="text-[10px] uppercase text-slate-500 font-bold leading-none">Score</p>
                     <p class="text-xl font-black ${scoreColor}">${site.score}/100</p>
