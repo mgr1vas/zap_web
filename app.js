@@ -1,4 +1,3 @@
-// Hardcoded Data με ονόματα και domains
 const staticData = {
     "last_update": "2026-04-09 18:00:00",
     "sites": [
