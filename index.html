@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZAP Security Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .card { background-color: #1e293b; border: 1px solid #334155; }
+    </style>
+</head>
+<body class="p-6 md:p-12">
+    <div class="max-w-6xl mx-auto">
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+            <div>
+                <h1 class="text-3xl font-bold text-white tracking-tight">
+                    Security Guard <span class="text-blue-500">ZAP</span>
+                </h1>
+                <p class="text-slate-400 mt-1">Automated vulnerability monitoring for your assets</p>
+            </div>
+            <div id="last-update" class="text-xs font-medium text-slate-400 bg-slate-800/50 border border-slate-700 px-4 py-2 rounded-full">
+                Syncing data...
+            </div>
+        </header>
+
+        <main id="dashboard-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div class="col-span-full text-center py-20">
+                <p class="text-slate-500 animate-pulse text-lg">Loading latest security reports...</p>
+            </div>
+        </main>
+
+        <footer class="mt-20 pt-8 border-t border-slate-800 text-center text-slate-600 text-sm">
+            <p>Powered by OWASP ZAP API & GitHub Actions</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
