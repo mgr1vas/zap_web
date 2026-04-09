@@ -3,39 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZAP Shield | Security Dashboard</title>
+    <title>ZAP Security Dashboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        body { background-color: #020617; color: #f8fafc; font-family: 'Plus Jakarta Sans', sans-serif; }
-        .card { background: linear-gradient(145deg, #0f172a, #1e293b); border: 1px solid #334155; }
-        .custom-scrollbar::-webkit-scrollbar { width: 4px; }
-        .custom-scrollbar::-webkit-scrollbar-thumb { background: #334155; border-radius: 10px; }
+        body { 
+            background-color: #0f172a; 
+            color: #f8fafc; 
+            font-family: 'Inter', sans-serif; 
+        }
+        .card { 
+            background-color: #1e293b; 
+            border: 1px solid #334155; 
+        }
+        /* Soft glow effect for the ZAP logo */
+        .zap-glow {
+            filter: drop-shadow(0 0 15px rgba(59, 130, 246, 0.4));
+        }
     </style>
 </head>
 <body class="p-6 md:p-12 min-h-screen">
     <div class="max-w-6xl mx-auto">
-        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-16 gap-6 text-white">
+        
+        <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
             <div>
-                <h1 class="text-4xl font-extrabold tracking-tighter">ZAP<span class="text-blue-500 italic">SHIELD</span></h1>
-                <p class="text-slate-500 font-medium mt-1 uppercase text-[10px] tracking-widest">Asset Vulnerability Intelligence</p>
+                <h1 class="text-3xl font-bold text-white tracking-tight">
+                    Security Guard <span class="text-blue-500">ZAP</span>
+                </h1>
+                <p class="text-slate-400 mt-1">Automated vulnerability monitoring for your assets</p>
             </div>
-            <div id="last-update" class="text-[10px] font-bold text-blue-400 bg-blue-500/10 border border-blue-500/20 px-4 py-2 rounded-full uppercase tracking-widest">
-                Connecting to node...
+            <div id="last-update" class="text-xs font-medium text-slate-400 bg-slate-800/50 border border-slate-700 px-4 py-2 rounded-full shadow-inner">
+                Syncing data...
             </div>
         </header>
 
-        <main id="dashboard-grid" class="grid grid-cols-1 lg:grid-cols-2 gap-8"></main>
+        <main id="dashboard-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div class="col-span-full text-center py-20">
+                <p class="text-slate-500 animate-pulse text-lg tracking-wide">Loading latest security reports...</p>
+            </div>
+        </main>
 
-        <section class="mt-24 p-10 rounded-3xl bg-slate-900/40 border border-slate-800 flex flex-col md:flex-row items-center gap-12">
-            <img src="https://www.zaproxy.org/images/logo-zap.png" alt="ZAP" class="w-32 drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">
+        <section class="mt-20 p-8 rounded-2xl bg-slate-800/20 border border-slate-700/50 flex flex-col md:flex-row items-center gap-10 transition-all hover:bg-slate-800/30">
+            <div class="flex-shrink-0">
+                <img src="static/zap-logo.png" 
+                     alt="OWASP ZAP Logo" 
+                     class="w-32 md:w-40 zap-glow transition-transform hover:scale-105 duration-300">
+            </div>
             <div class="text-center md:text-left">
-                <h3 class="text-2xl font-extrabold text-white mb-4 italic uppercase">Active Infrastructure Monitoring</h3>
-                <p class="text-slate-400 text-sm leading-relaxed mb-6">Combined ZAP scanning with live broken link detection and WAF auditing for complete security posture.</p>
-                <a href="https://zaproxy.org" class="text-blue-500 text-xs font-black uppercase tracking-widest hover:text-blue-400">Security Documentation &rarr;</a>
+                <h3 class="text-xl font-bold text-white mb-3">Powered by OWASP ZAP</h3>
+                <p class="text-slate-400 text-sm leading-relaxed max-w-2xl">
+                    The OWASP Zed Attack Proxy (ZAP) is the world's most widely used web app scanner. 
+                    It is a free, open-source tool maintained by a global community. This dashboard 
+                    leverages the ZAP API to automate security testing and visualize risks 
+                    in real-time, ensuring your applications stay protected against modern threats.
+                </p>
+                <div class="mt-5 flex flex-wrap justify-center md:justify-start gap-6">
+                    <a href="https://www.zaproxy.org/" target="_blank" class="text-blue-400 hover:text-blue-300 text-xs font-bold uppercase tracking-widest transition">
+                        Official Website &rarr;
+                    </a>
+                    <a href="https://github.com/zaproxy/zaproxy" target="_blank" class="text-slate-500 hover:text-slate-300 text-xs font-bold uppercase tracking-widest transition">
+                        Source Code
+                    </a>
+                </div>
             </div>
         </section>
+
+        <footer class="mt-16 pt-8 border-t border-slate-800/60 text-center text-slate-600 text-xs tracking-widest uppercase">
+            <p>&copy; 2024 &bull; Continuous Security Monitoring &bull; ZAP API Integration</p>
+        </footer>
     </div>
+
     <script src="app.js"></script>
 </body>
 </html>
