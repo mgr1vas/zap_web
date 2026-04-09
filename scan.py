@@ -17,7 +17,6 @@ TARGETS = [
     'https://whiteguard.org',
     'https://research-agent-3c46.onrender.com/',
     'https://mgr1vas.github.io/whiteguard_etherlens/',
-    'https://dit.uoi.gr'
 ]
 
 def run_zap_scan():
@@ -31,7 +30,7 @@ def run_zap_scan():
     }
 
     for target in TARGETS:
-        print(f"\n--- Starting scan for: {target} ---")
+        print(f"\nStarting scan for: {target}")
         
         # Clear previous session data for the current target
         zap.core.new_session(name="MySession", overwrite=True)
