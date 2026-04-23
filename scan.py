@@ -84,7 +84,7 @@ def run_zap_scan():
     all_results = {"last_update": datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "sites": []}
 
     for target in TARGETS:
-        print(f"--- Scanning: {target} ---")
+        print(f"Scanning: {target}")
         extra = get_extra_info(target)
         zap.core.new_session(name="MySession", overwrite=True)
         zap.spider.scan(target)
